@@ -12,6 +12,16 @@ app.get('/', function(req, res)
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/index.html', function(req, res)
+{
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/register.html', function(req, res)
+{
+    res.sendFile(__dirname + '/register.html');
+});
+
 // app.use(express.static(__dirname + '../images/custom.css'));
 
 
