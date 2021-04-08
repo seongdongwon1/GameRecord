@@ -30,29 +30,29 @@ app.get('/register.html', function(req, res)
 ///////////////////////  image load    ///////////////////////////////
 /////////////////////// 근데 이거 맞냐? ///////////////////////////////
 //////////////////////////////////////////////////////////////////////
-app.get('/imgs1', function (req, res)
+app.get('/images1', function (req, res)
 {
     fs.readFile('../Record/images/image1.PNG', function (errer, data)
     {
-        res.writeHead(200, { 'Content-Type' : 'text/html' });
+        res.writeHead(200, { 'Content-Type' : 'image/png' });
         res.end(data);
     })
 })
 
-app.get('/imgs2', function (req, res)
+app.get('/images2', function (req, res)
 {
     fs.readFile('../Record/images/image2.PNG', function (errer, data)
     {
-        res.writeHead(200, { 'Content-Type' : 'text/html' });
+        res.writeHead(200, { 'Content-Type' : 'image/png' });
         res.end(data);
     })
 })
 
-app.get('/imgs3', function (req, res)
+app.get('/images3', function (req, res)
 {
     fs.readFile('../Record/images/image3.PNG', function (errer, data)
     {
-        res.writeHead(200, { 'Content-Type' : 'text/html' });
+        res.writeHead(200, { 'Content-Type' : 'image/png' });
         res.end(data);
     })
 })
