@@ -1,28 +1,43 @@
+"use strict";
+
+//모듈
 const express = require('express');
 const fs = require('fs');
 const app = express();
 
-app.listen(8080, function()
+const PORT = 8080;
+
+//라우팅
+const home = require("./routes/home");
+
+app.set("views", "./views");
+app.set("view engine", "ejs");
+
+app.use("/", home);
+
+app.listen(PORT, function()
 {
-    
+    console.log("서버 가동");
 });
 
-app.get('/', function(req, res)
-{
-    res.sendFile(__dirname + '/index.html');
-});
+//////////////////////////////////////////////////////////////////////
+///////////////////////    경로    ///////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 
-app.get('/index.html', function(req, res)
-{
-    res.sendFile(__dirname + '/index.html');
-});
+// app.get('/', function(req, res)
+// {
+//     res.sendFile(__dirname + '/index.html');
+// });
 
-app.get('/register.html', function(req, res)
-{
-    res.sendFile(__dirname + '/register.html');
-});
+// app.get('/index.html', function(req, res)
+// {
+//     res.sendFile(__dirname + '/index.html');
+// });
 
-// app.use(express.static(__dirname + '../images/custom.css'));
+// app.get('/register.html', function(req, res)
+// {
+//     res.sendFile(__dirname + '/register.html');
+// });
 
 
 
@@ -30,6 +45,7 @@ app.get('/register.html', function(req, res)
 ///////////////////////  image load    ///////////////////////////////
 /////////////////////// 근데 이거 맞냐? ///////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
 app.get('/images/image1.PNG', function (req, res)
 {
     fs.readFile('images/image1.PNG', function (errer, data)
@@ -39,7 +55,7 @@ app.get('/images/image1.PNG', function (req, res)
     })
 })
 
-app.get('/images2', function (req, res)
+app.get('/images/image2.PNG', function (req, res)
 {
     fs.readFile('images/image2.PNG', function (errer, data)
     {
@@ -48,7 +64,7 @@ app.get('/images2', function (req, res)
     })
 })
 
-app.get('/images3', function (req, res)
+app.get('/images/image3.PNG', function (req, res)
 {
     fs.readFile('images/image3.PNG', function (errer, data)
     {
@@ -58,16 +74,15 @@ app.get('/images3', function (req, res)
 })
 
 
+//////////////////////////////////////////////////////////////////////
+///////////////////////  register    /////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////
 
-// app.get('/css', function (req, res)
-// {
-//     fs.readFile('../Record/css/custom.css', function (errer, data)
-//     {
-//         res.writeHead(200, { 'Content-Type' : 'text/css' });
-//         res.end(data);
-//     })
-// })
 
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 app.use(express.static('public'));
