@@ -30,7 +30,7 @@ app.get('/register.html', function(req, res)
 ///////////////////////  image load    ///////////////////////////////
 /////////////////////// 근데 이거 맞냐? ///////////////////////////////
 //////////////////////////////////////////////////////////////////////
-app.get('/images1', function (req, res)
+app.get('/images/image1.PNG', function (req, res)
 {
     fs.readFile('images/image1.PNG', function (errer, data)
     {
