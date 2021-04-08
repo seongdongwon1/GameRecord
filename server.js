@@ -32,7 +32,7 @@ app.get('/register.html', function(req, res)
 //////////////////////////////////////////////////////////////////////
 app.get('/images1', function (req, res)
 {
-    fs.readFile('../Record/images/image1.PNG', function (errer, data)
+    fs.readFile('images/image1.PNG', function (errer, data)
     {
         res.writeHead(200, { 'Content-Type' : 'image/png' });
         res.end(data);
@@ -41,7 +41,7 @@ app.get('/images1', function (req, res)
 
 app.get('/images2', function (req, res)
 {
-    fs.readFile('../Record/images/image2.PNG', function (errer, data)
+    fs.readFile('images/image2.PNG', function (errer, data)
     {
         res.writeHead(200, { 'Content-Type' : 'image/png' });
         res.end(data);
@@ -50,7 +50,7 @@ app.get('/images2', function (req, res)
 
 app.get('/images3', function (req, res)
 {
-    fs.readFile('../Record/images/image3.PNG', function (errer, data)
+    fs.readFile('images/image3.PNG', function (errer, data)
     {
         res.writeHead(200, { 'Content-Type' : 'image/png' });
         res.end(data);
