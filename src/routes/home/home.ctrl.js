@@ -1,17 +1,20 @@
 "use strict";
 
-const home = (req,res) =>
+const output =
 {
-    res.render("home/index");
+    home : (req,res) =>
+    {
+        res.render("home/index");
+    },
+
+    register : (req,res) =>
+    {
+        res.render("home/register");
+    }
 }
 
-const register = (req,res) =>
-{
-    res.render("home/register");
-}
 
 module.exports =
 {
-    home,
-    register,
+    output,
 }

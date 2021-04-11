@@ -5,8 +5,8 @@ const router = express.Router();
 
 const ctrl = require("./home.ctrl");
 
-router.get("/", ctrl.home);
-router.get("/register", ctrl.register);
+router.get("/", ctrl.output.home);
+router.get("/register", ctrl.output.register);
 
 module.exports = router;
 
