@@ -18,7 +18,7 @@ app.use(express.static(`${__dirname}/public`)); //미들웨어 정적경로
 
 /////////////////////////////////////////////////////////////////////
 app.use("/", home);
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended:true }));
 app.use(bodyParser.json());
 
 app.listen(PORT, function()
@@ -85,27 +85,6 @@ app.get('/images/image3.PNG', function (req, res)
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-app.post("/register-check", (req, res) =>
-{
-
-    //1..먼저 비밀번호 체크
-    //2-1 ..DB에 userID가 있는지.
-    //2-2 ..DB에 없다면 저장.
-
-    
-    var userID = req.body.inputUserame;
-    var userEmail = req.body.inputEmail;
-    var userPassword = req.body.inputPassword;
-    var userPasswordCheck = req.body.inputConfirmPassword;
-
-    if(userPassword != userPasswordCheck)
-    {
-        alert('비밀번호를 다시 한번 확인해주세요.');
-        return;
-    }
-    
-
-})
 
 
 //////////////////////////////////////////////////////////////////////
