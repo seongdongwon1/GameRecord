@@ -6,12 +6,6 @@ const id        = document.querySelector("#id"),
     pswordc     = document.querySelector("#passwordcheck"),
     loginBtn    = document.querySelector("#Btn");
 
-console.log('id', id);
-console.log('email', email);
-console.log('ps', psword);
-console.log('psc', pswordc);
-console.log('btn', loginBtn);
-
 loginBtn.addEventListener("click", login);
 
 function login()
