@@ -4,7 +4,7 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 
 
 const PORT = 8080;
@@ -12,40 +12,22 @@ const PORT = 8080;
 //라우팅
 const home = require("./routes/home");
 
+//앱 세팅
 app.set("views", "./views");
 app.set("view engine", "ejs");
 app.use(express.static(`${__dirname}/public`)); //미들웨어 정적경로
+app.use(express.json());
+app.use(express.urlencoded({ extended : true }));
 
-/////////////////////////////////////////////////////////////////////
+
+
 app.use("/", home);
-app.use(bodyParser.urlencoded({ extended:true }));
-app.use(bodyParser.json());
+
 
 app.listen(PORT, function()
 {
     console.log("서버 가동");
 });
-
-//////////////////////////////////////////////////////////////////////
-///////////////////////    경로    ///////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-
-// app.get('/', function(req, res)
-// {
-//     res.sendFile(__dirname + '/index.html');
-// });
-
-// app.get('/index.html', function(req, res)
-// {
-//     res.sendFile(__dirname + '/index.html');
-// });
-
-// app.get('/register.html', function(req, res)
-// {
-//     res.sendFile(__dirname + '/register.html');
-// });
-
-
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////  image load    ///////////////////////////////
@@ -90,4 +72,3 @@ app.get('/images/image3.PNG', function (req, res)
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-app.use(express.static('public'));

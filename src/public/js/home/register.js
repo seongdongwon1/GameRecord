@@ -21,7 +21,7 @@ function register()
     fetch("/register", {
         method : "POST",
         header : {
-            "Content-Type" : "application/json"
+            "Content-Type": "application/json",
         },
         body : JSON.stringify(req),
     })
