@@ -28,7 +28,7 @@ function register()
     {
         return alert('비밀번호가 일치 하지 않습니다.');
     }
-    
+
     const req = 
     {
         id : id.value,
@@ -56,5 +56,5 @@ function register()
         .catch((err) =>
         {
             console.error("회원가입 중 에러 발생");
-        })
+        });
 }
