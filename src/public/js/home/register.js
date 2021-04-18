@@ -35,6 +35,7 @@ function register()
         email : email.value,
         psword : psword.value,
     };
+
     fetch("/register", {
         method : "POST",
         headers : {
