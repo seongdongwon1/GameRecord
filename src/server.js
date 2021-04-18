@@ -4,10 +4,11 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-//const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+dotenv.config();
 
 
-const PORT = 8080;
+const PORT = process.env.PORT || 9000;
 
 //라우팅
 const home = require("./routes/home");
