@@ -3,6 +3,7 @@
 
 const UserStorage = require("./UserStorage");
 
+
 class User
 {
     constructor(body)
@@ -35,16 +36,24 @@ class User
     async register()
     {
         const client = this.body;
-        try
+        //먼저 check 하자
+        const check_id = await UserStorage.getUserInfo(client.id);
+        if(check_id === undefined)
         {
-            const response = await UserStorage.save(client);
-            return response;
+            try
+            {
+                const response = await UserStorage.save(client);
+                return response;
+            }
+            catch (err)
+            {
+                return { success : false, msg : err };
+            }
         }
-        catch (err)
+        else
         {
-            return { success : false, msg : err };
+            return { succecc : false, msg : "이미 존재하는 Username 입니다." };
         }
-        
     }
 }
 

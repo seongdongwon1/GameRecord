@@ -26,7 +26,7 @@ function login()
     {
         if(res.success)
         {
-            location.href="/";
+            location.href = "/";
         }
         else
         {
@@ -38,3 +38,4 @@ function login()
         console.error("로그인 중 에러 발생");
     });
 }
+
